@@ -1,10 +1,10 @@
 public class Laptop {
-    String Processor = "Ryzen";
-    static int Architecture = 64;
-    String GPU = "Integrated Graphics";
-    int RAM = 16;
-    String OS = "Linux";
-    String Applications = "Chrome, VSCode";
+    String processor = "Ryzen";
+    static int architecture = 64;
+    String gpu = "Integrated Graphics";
+    int ram = 16;
+    String os = "Linux";
+    String applications = "Chrome, VSCode";
 
     public void viewSystemInfo(){
         System.out.println("Looking up system info. Please wait...");
@@ -24,12 +24,12 @@ public class Laptop {
         }
 
         System.out.println("-----------------------");
-        System.out.println("OS: " + OS);
-        System.out.println("Processor: " + Processor);
-        System.out.println("Architecture: " + Architecture);
-        System.out.println("GPU: " + GPU);
-        System.out.println("RAM: " + RAM);
-        System.out.println("Installed applications: " + Applications);
+        System.out.println("OS: " + os);
+        System.out.println("Processor: " + processor);
+        System.out.println("Architecture: " + architecture);
+        System.out.println("GPU: " + gpu);
+        System.out.println("RAM: " + ram);
+        System.out.println("Installed applications: " + applications);
         System.out.println("-----------------------");
 
         try {
