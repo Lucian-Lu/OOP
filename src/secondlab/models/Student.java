@@ -1,4 +1,7 @@
-package secondlab;
+package secondlab.models;
+
+import secondlab.Date;
+
 
 import java.util.Scanner;
 
@@ -9,7 +12,7 @@ public class Student {
     private String email;
     private Date enrollmentDate;
     private Date dateOfBirth;
-    private Boolean graduated;
+    private boolean graduatedStatus;
 
     public void createStudent() {
         //String firstName, String lastName, String email, Date enrollmentDate,
@@ -37,7 +40,44 @@ public class Student {
         System.out.println("Email = " + this.email);
         System.out.println("Enrollment Date = " + this.enrollmentDate);
         System.out.println("Date of Birth = " + this.dateOfBirth);
+        scanner.close();
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getEnrollmentDate() {
+        return enrollmentDate;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setGraduatedStatus(Boolean graduatedStatus) {
+        this.graduatedStatus = graduatedStatus;
+    }
+
+//    public void test() {
+//        Scanner scanner = new Scanner(System.in);
+//        Student student = new Student();
+//        byte enrollment_day = scanner.nextByte();
+//        byte enrollment_month = scanner.nextByte();
+//        short enrollment_year = scanner.nextShort();
+//        this.enrollmentDate = new Date(enrollment_day, enrollment_month, enrollment_year);
+//        System.out.print(getEnrollmentDate());
+//        scanner.close();
+//    }
+
 
     @Override
     public String toString() {
@@ -49,8 +89,5 @@ public class Student {
                 ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
-//    @Override Return the data as a string?
-//    public String toString() {
-//        return String.format("%s %s %s %s", );
-//    }
+
 }
