@@ -1,8 +1,9 @@
-package secondlab;
+package secondlab.models;
 
-import java.time.format.DateTimeFormatter;
+import secondlab.Date;
+
 import java.util.*;
-import java.time.*;
+import java.time.LocalDate;
 
 
 public class Faculty {
@@ -10,13 +11,17 @@ public class Faculty {
     private String abbreviation;
     private List<Student> students;
     private StudyField studyField;
-    private Date gradDate;
+    private secondlab.Date gradDate;
+
 
     public Faculty() {
         this.students = new ArrayList<>();
     }
 
+    // TODO change name to reflect the method's functionality better
     public void assignFaculty() {
+        // TODO not assign but assign student to faculty
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the faculty name: ");
         this.name = scanner.next();
@@ -58,16 +63,32 @@ public class Faculty {
         System.out.println("Faculty Abbreviation = " + this.abbreviation);
         System.out.println("Faculty Students? = " + this.students);
         System.out.println("Study Field = " + this.studyField);
+
+        //scanner.close();
     }
 
-    public void isGraduated() {
+    public void setGraduated() {
         Scanner scanner = new Scanner(System.in);
-        this.gradDate = new Date(day, month, year);
-        System.out.println(gradDate);
-        LocalDate date = LocalDate.now();
-        DateTimeFormatter formatters = DateTimeFormatter.ofPattern("d/MM/uuuu");
-        date = date.format(formatters);
-        System.out.println(date);
-        System.out.println(gradDate);
+        System.out.print("Input student email to modify the graduation status of: ");
+        String email = scanner.next();
+        for (Student student : students) {
+            if (student.getEmail().equals(email)) {
+                System.out.print("Input the student graduation status of the student: ");
+                boolean gradStatus = scanner.nextBoolean();
+                student.setGraduatedStatus(gradStatus);
+            }
+        }
+        System.out.print(students);
+        scanner.close();
+//        LocalDate date = LocalDate.now();
+//        String dateString = date.toString();
+//        String[] dateString2 = dateString.split("-");
+//        ArrayList<Integer> dateSt = new ArrayList<>();
+//        for (String test : dateString2) {
+//            int test2 = Integer.parseInt(test);
+//            dateSt.add(test2);
+//        }
+//        Collections.swap(dateSt, 0, 2);
     }
+
 }
