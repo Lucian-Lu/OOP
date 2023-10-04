@@ -1,5 +1,7 @@
 package secondlab.models;
 
+import secondlab.behavior.LogManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +13,10 @@ public class University {
         return faculties;
     }
 
-    public void createFaculty(String name, String abbreviation, String studyField) {
+    public void createFaculty(String name, String abbreviation, StudyField studyField) {
         faculties.add(new Faculty(name, abbreviation, studyField));
         System.out.println("New faculty created successfully.\n");
+        LogManager.log("AUDIT: Created new faculty");
     }
 
 
@@ -22,11 +25,18 @@ public class University {
             for (Student student : faculty.getStudents()) {
                 if (student.getEmail().equals(email)) {
                     System.out.println("Faculty correlated to student = " +
-                            faculty.getAbbreviation() + "\n");
+                            faculty.getAbbreviation() + "\n" +
+                            "Student first name = " + student.getFirstName() + "\n" +
+                            "Student last name = " + student.getLastName() + "\n" +
+                            "Student enrollment date = " + student.getEnrollmentDate() + "\n" +
+                            "Student date of birth = " + student.getDateOfBirth() + "\n"
+                            );
+                    LogManager.log("AUDIT: Searched student by faculty using email");
                     return;
                 }
             }
         }
+        LogManager.log("WARN: Student not found by this email - " + email);
         System.out.println("Student not found");
     }
 
@@ -40,6 +50,7 @@ public class University {
                     faculty.getStudyField());
             i++;
         }
+        LogManager.log("AUDIT: Displayed all faculties");
     }
 
     public void displayAllStudyFieldFaculties(String studyField) {
@@ -52,5 +63,6 @@ public class University {
                         faculty.getAbbreviation());
             }
         }
+        LogManager.log("AUDIT: Displayed faculties related to " + studyField);
     }
 }
