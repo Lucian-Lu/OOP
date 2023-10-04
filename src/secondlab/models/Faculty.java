@@ -67,7 +67,7 @@ public class Faculty {
             }
         }
         LogManager.log("WARN: Student not found while graduating student");
-        System.out.println("Student not found. Please make sure to check for typos.\n");
+        System.out.println("Student not found in faculties.\n");
     }
 
     public static void displayEnrolledStudents(String abbreviation) {
@@ -89,7 +89,7 @@ public class Faculty {
             }
         }
         if (i == 1) {
-            System.out.println("No students have been found. Check your faculty abbreviation.\n");
+            System.out.println("No students have been found - " + abbreviation + " faculty\n");
             LogManager.log("WARN: Enrolled students not found for faculty - " +
                     abbreviation);
             return;
@@ -116,7 +116,7 @@ public class Faculty {
             }
         }
         if (i == 1) {
-            System.out.println("No students have been found. Check your faculty abbreviation.\n");
+            System.out.println("No students have been found - " + abbreviation + " faculty\n");
             LogManager.log("WARN: Graduated students not found for faculty - " +
                     abbreviation);
             return;

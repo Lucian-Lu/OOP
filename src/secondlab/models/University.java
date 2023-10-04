@@ -37,7 +37,7 @@ public class University {
             }
         }
         LogManager.log("WARN: Student not found by this email - " + email);
-        System.out.println("Student not found");
+        System.out.println("No student has this email.");
     }
 
 

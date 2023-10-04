@@ -72,7 +72,7 @@ public class Student {
             }
         }
         LogManager.log("WARN: Student email not found while changing first name");
-        System.out.println("Student email not found in database.\n");
+        System.out.println("Student email not found.\n");
     }
 
     public static void changeLastName(String email, String lastName) {
@@ -89,7 +89,7 @@ public class Student {
             }
         }
         LogManager.log("WARN: Student email not found while changing last name");
-        System.out.println("Student email not found in database.\n");
+        System.out.println("Student email not found.\n");
     }
 
     @Override
