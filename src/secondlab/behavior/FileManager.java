@@ -38,6 +38,9 @@ public class FileManager {
     }
 
     public static void load() {
+        System.out.println("-----------------------------------\n" +
+                "-------Loading data from file------\n" +
+                "-----------------------------------\n");
         University university = new University();
         FileManager fileManager = new FileManager();
         fileManager.setFileName(".\\src\\secondlab\\behavior\\saves\\database.txt");
@@ -90,7 +93,10 @@ public class FileManager {
             System.out.println("Error while loading file.\n");
             throw new RuntimeException(e);
         }
-        System.out.println("Successfully loaded previous data.");
+        System.out.println("-----------------------------------\n" +
+                "Successfully loaded file data.\n" +
+                "-----------------------------------\n"
+        );
     }
 
     public static void graduateBatch() {
