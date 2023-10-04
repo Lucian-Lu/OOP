@@ -78,32 +78,48 @@ public class ApplicationLoop {
             String option = scanner.nextLine();
             LogManager.log("AUDIT: Entered command - general operations: " + option);
             String[] optionCommands = option.split("/");
-            switch (optionCommands[0]) {
-                case "nf":
-                    university.createFaculty(optionCommands[1], optionCommands[2],
-                            StudyField.valueOf(optionCommands[3]));
-                    break;
-                case "ss":
-                    university.searchStudentFaculty(optionCommands[1]);
-                    break;
-                case "df":
-                    if (optionCommands.length == 1) {
-                        university.displayFaculties();
-                    } else {
-                        university.displayAllStudyFieldFaculties(optionCommands[1]);
-                    }
-                    break;
-                case "b":
-                    LogManager.log("AUDIT: Back from - general operations");
-                    keepLooping = false;
-                    break;
-                case "q":
-                    LogManager.log("INFO: Exiting program - general operations");
-                    System.out.println("Exiting program...");
-                    return false;
-                default:
-                    LogManager.log("WARN: Wrong option - general operations");
-                    System.out.println("Invalid option. Try again.\n");
+            try {
+                switch (optionCommands[0]) {
+                    case "nf":
+                        if (optionCommands.length != 4) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        university.createFaculty(optionCommands[1], optionCommands[2],
+                                StudyField.valueOf(optionCommands[3]));
+                        break;
+                    case "ss":
+                        if (optionCommands.length != 2) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        university.searchStudentFaculty(optionCommands[1]);
+                        break;
+                    case "df":
+                        if (optionCommands.length == 1) {
+                            university.displayFaculties();
+                        } else {
+                            if (optionCommands.length != 2) {
+                                throw new IllegalArgumentException("Invalid number of command parameters");
+                            }
+                            university.displayAllStudyFieldFaculties(optionCommands[1]);
+                        }
+                        break;
+                    case "b":
+                        LogManager.log("AUDIT: Back from - general operations");
+                        keepLooping = false;
+                        break;
+                    case "q":
+                        FileManager.save();
+                        LogManager.log("INFO: Exiting program - general operations");
+                        System.out.println("Exiting program...");
+                        return false;
+                    default:
+                        LogManager.log("WARN: Wrong option - general operations");
+                        System.out.println("Invalid option. Try again.\n");
+                }
+            } catch (IllegalArgumentException e) {
+                LogManager.log("ERROR: Illegal command in general operations" +
+                        e.getMessage());
+                System.out.println("Error: " + e.getMessage() + "\n");
             }
         }
         return true;
@@ -127,44 +143,66 @@ public class ApplicationLoop {
             String option = scanner.nextLine();
             LogManager.log("AUDIT: Entered command - faculty operations: " + option);
             String[] optionCommands = option.split("/");
-            switch (optionCommands[0]) {
-                case "ns":
-                    String[] enrollmentDate = LocalDate.now().toString().split("-");
-                    Date formatEnrollmentDate = new Date(
-                            (byte) Integer.parseInt(enrollmentDate[2]),
-                            (byte) Integer.parseInt(enrollmentDate[1]),
-                            (short) Integer.parseInt(enrollmentDate[0]));
-                    Date formatBirthDate = new Date(
-                            (byte) Integer.parseInt(optionCommands[5]),
-                            (byte) Integer.parseInt(optionCommands[6]),
-                            (short) Integer.parseInt(optionCommands[7]));
-                    Faculty.createAndAddStudentToFaculty(optionCommands[1], optionCommands[2],
-                            optionCommands[3], optionCommands[4], formatEnrollmentDate,
-                            formatBirthDate);
-                    break;
-                case "gs":
-                    Faculty.graduateStudent(optionCommands[1]);
-                    break;
-                case "ds":
-                    Faculty.displayEnrolledStudents(optionCommands[1]);
-                    break;
-                case "dg":
-                    Faculty.displayGraduatedStudents(optionCommands[1]);
-                    break;
-                case "bf":
-                    Faculty.enrolledInFaculty(optionCommands[1], optionCommands[2]);
-                    break;
-                case "b":
-                    LogManager.log("AUDIT: Back from - faculty operations");
-                    keepLooping = false;
-                    break;
-                case "q":
-                    LogManager.log("INFO: Exiting program - faculty operations");
-                    System.out.println("Exiting program...");
-                    return false;
-                default:
-                    LogManager.log("WARN: Wrong option - faculty operations");
-                    System.out.println("Invalid option. Try again.\n");
+            try {
+                switch (optionCommands[0]) {
+                    case "ns":
+                        if (optionCommands.length != 8) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        String[] enrollmentDate = LocalDate.now().toString().split("-");
+                        Date formatEnrollmentDate = new Date(
+                                (byte) Integer.parseInt(enrollmentDate[2]),
+                                (byte) Integer.parseInt(enrollmentDate[1]),
+                                (short) Integer.parseInt(enrollmentDate[0]));
+                        Date formatBirthDate = new Date(
+                                (byte) Integer.parseInt(optionCommands[5]),
+                                (byte) Integer.parseInt(optionCommands[6]),
+                                (short) Integer.parseInt(optionCommands[7]));
+                        Faculty.createAndAddStudentToFaculty(optionCommands[1], optionCommands[2],
+                                optionCommands[3], optionCommands[4], formatEnrollmentDate,
+                                formatBirthDate);
+                        break;
+                    case "gs":
+                        if (optionCommands.length != 2) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        Faculty.graduateStudent(optionCommands[1]);
+                        break;
+                    case "ds":
+                        if (optionCommands.length != 2) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        Faculty.displayEnrolledStudents(optionCommands[1]);
+                        break;
+                    case "dg":
+                        if (optionCommands.length != 2) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        Faculty.displayGraduatedStudents(optionCommands[1]);
+                        break;
+                    case "bf":
+                        if (optionCommands.length != 3) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        Faculty.enrolledInFaculty(optionCommands[1], optionCommands[2]);
+                        break;
+                    case "b":
+                        LogManager.log("AUDIT: Back from - faculty operations");
+                        keepLooping = false;
+                        break;
+                    case "q":
+                        FileManager.save();
+                        LogManager.log("INFO: Exiting program - faculty operations");
+                        System.out.println("Exiting program...");
+                        return false;
+                    default:
+                        LogManager.log("WARN: Wrong option - faculty operations");
+                        System.out.println("Invalid option. Try again.\n");
+                }
+            } catch (IllegalArgumentException e) {
+                LogManager.log("ERROR: Illegal command in faculty operations" +
+                        e.getMessage());
+                System.out.println("Error: " + e.getMessage() + "\n");
             }
         }
         return true;
@@ -184,24 +222,37 @@ public class ApplicationLoop {
             String option = scanner.nextLine();
             LogManager.log("AUDIT: Entered command - student operations: " + option);
             String[] optionCommands = option.split("/");
-            switch (optionCommands[0]) {
-                case "cf":
-                    Student.changeFirstName(optionCommands[1], optionCommands[2]);
-                    break;
-                case "cl":
-                    Student.changeLastName(optionCommands[1], optionCommands[2]);
-                    break;
-                case "b":
-                    LogManager.log("AUDIT: Back from - student operations");
-                    keepLooping = false;
-                    break;
-                case "q":
-                    LogManager.log("INFO: Exiting program - student operations");
-                    System.out.println("Exiting program...");
-                    return false;
-                default:
-                    LogManager.log("WARN: Wrong option - student operations");
-                    System.out.println("Invalid option. Try again.\n");
+            try {
+                switch (optionCommands[0]) {
+                    case "cf":
+                        if (optionCommands.length != 3) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        Student.changeFirstName(optionCommands[1], optionCommands[2]);
+                        break;
+                    case "cl":
+                        if (optionCommands.length != 3) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        Student.changeLastName(optionCommands[1], optionCommands[2]);
+                        break;
+                    case "b":
+                        LogManager.log("AUDIT: Back from - student operations");
+                        keepLooping = false;
+                        break;
+                    case "q":
+                        FileManager.save();
+                        LogManager.log("INFO: Exiting program - student operations");
+                        System.out.println("Exiting program...");
+                        return false;
+                    default:
+                        LogManager.log("WARN: Wrong option - student operations");
+                        System.out.println("Invalid option. Try again.\n");
+                }
+            } catch (IllegalArgumentException e) {
+                LogManager.log("ERROR: Illegal command in student operations " +
+                        e.getMessage());
+                System.out.println("Error: " + e.getMessage() + "\n");
             }
         }
         return true;
@@ -221,24 +272,34 @@ public class ApplicationLoop {
             String option = scanner.nextLine();
             LogManager.log("AUDIT: Entered command - batch operations: " + option);
             String[] optionCommands = option.split("/");
-            switch (optionCommands[0]) {
-                case "be":
-                    FileManager.enrollBatch(optionCommands[1]);
-                    break;
-                case "bg":
-                    FileManager.graduateBatch();
-                    break;
-                case "b":
-                    LogManager.log("AUDIT: Back from - batch operations");
-                    keepLooping = false;
-                    break;
-                case "q":
-                    LogManager.log("INFO: Exiting program - batch operations");
-                    System.out.println("Exiting program...");
-                    return false;
-                default:
-                    LogManager.log("WARN: Wrong option - batch operations");
-                    System.out.println("Invalid option. Try again.\n");
+            try {
+                switch (optionCommands[0]) {
+                    case "be":
+                        if (optionCommands.length != 2) {
+                            throw new IllegalArgumentException("Invalid number of command parameters");
+                        }
+                        FileManager.enrollBatch(optionCommands[1]);
+                        break;
+                    case "bg":
+                        FileManager.graduateBatch();
+                        break;
+                    case "b":
+                        LogManager.log("AUDIT: Back from - batch operations");
+                        keepLooping = false;
+                        break;
+                    case "q":
+                        FileManager.save();
+                        LogManager.log("INFO: Exiting program - batch operations");
+                        System.out.println("Exiting program...");
+                        return false;
+                    default:
+                        LogManager.log("WARN: Wrong option - batch operations");
+                        System.out.println("Invalid option. Try again.\n");
+                }
+            } catch (IllegalArgumentException e) {
+                LogManager.log("ERROR: Illegal command in batch operations " +
+                        e.getMessage());
+                System.out.println("Error: " + e.getMessage() + "\n");
             }
         }
         return true;
