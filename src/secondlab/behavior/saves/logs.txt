@@ -1,0 +1,26 @@
+41 02 21 04 10 2023 | AUDIT: Using general operations
+53 04 21 04 10 2023 | Audit: Created new faculty
+53 04 21 04 10 2023 | AUDIT: Student added to faculty
+53 04 21 04 10 2023 | AUDIT: Student (lucian.lupan@isa.utm.md) graduated
+53 04 21 04 10 2023 | AUDIT: Student added to faculty
+53 04 21 04 10 2023 | AUDIT: Student added to faculty
+53 04 21 04 10 2023 | Audit: Created new faculty
+53 04 21 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+56 04 21 04 10 2023 | AUDIT: Entered command - main menu: g
+56 04 21 04 10 2023 | AUDIT: Using general operations
+11 06 21 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+11 06 21 04 10 2023 | Audit: Created new faculty
+11 06 21 04 10 2023 | AUDIT: Student added to faculty
+11 06 21 04 10 2023 | AUDIT: Student (lucian.lupan@isa.utm.md) graduated
+11 06 21 04 10 2023 | AUDIT: Student added to faculty
+11 06 21 04 10 2023 | AUDIT: Student added to faculty
+11 06 21 04 10 2023 | Audit: Created new faculty
+11 06 21 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+44 14 21 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+44 14 21 04 10 2023 | AUDIT: Created new faculty
+44 14 21 04 10 2023 | AUDIT: Student added to faculty
+44 14 21 04 10 2023 | AUDIT: Student (lucian.lupan@isa.utm.md) graduated
+44 14 21 04 10 2023 | AUDIT: Student added to faculty
+44 14 21 04 10 2023 | AUDIT: Student added to faculty
+44 14 21 04 10 2023 | AUDIT: Created new faculty
+44 14 21 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
