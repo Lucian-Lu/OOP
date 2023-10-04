@@ -1,12 +1,14 @@
 package secondlab.models;
 
 
+import secondlab.behavior.LogManager;
+
 public class Student {
     private String firstName;
     private String lastName;
-    private String email;
-    private Date enrollmentDate;
-    private Date dateOfBirth;
+    private final String email;
+    private final Date enrollmentDate;
+    private final Date dateOfBirth;
     private boolean graduated;
 
 
@@ -63,10 +65,13 @@ public class Student {
                 if (student.getEmail().equals(email)) {
                     student.setFirstName(firstName);
                     System.out.println("Student first name changed successfully.\n");
+                    LogManager.log("AUDIT: Student (" +
+                            student.getEmail() + ") - first name changed");
                     return;
                 }
             }
         }
+        LogManager.log("WARN: Student email not found while changing first name");
         System.out.println("Student email not found in database.\n");
     }
 
@@ -77,11 +82,19 @@ public class Student {
                 if (student.getEmail().equals(email)) {
                     student.setLastName(lastName);
                     System.out.println("Student last name changed successfully.\n");
+                    LogManager.log("AUDIT: Student (" +
+                            student.getEmail() + ") - last name changed");
                     return;
                 }
             }
         }
+        LogManager.log("WARN: Student email not found while changing last name");
         System.out.println("Student email not found in database.\n");
     }
 
+    @Override
+    public String toString() {
+        return ("\n" + firstName + "\n" + lastName + "\n" + email + "\n" + enrollmentDate + "\n" +
+                dateOfBirth + "\n" + graduated + "\n");
+    }
 }
