@@ -13,8 +13,10 @@ Other features:
 * Saving data to files
 * Loading previous states from files
 * Logging
+* Error handlers
 <br>
 
 Work in progress:
-* Error handlers
+* Sleep
+
 
