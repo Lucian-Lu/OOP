@@ -8,16 +8,17 @@ import java.time.format.DateTimeFormatter;
 
 public class LogManager {
 
-    public static void clearLogFile() {
-        FileManager fileManager = new FileManager();
-        fileManager.setFileName(".\\src\\secondlab\\behavior\\saves\\logs.txt");
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileManager.getFileName()))) {
-        } catch (IOException e) {
-            System.out.println("Error while clearing logs.\n");
-            throw new RuntimeException(e);
-        }
-    }
+    // Not sure if I need to clear logs at start so I'll just leave this here for now
+//    public static void clearLogFile() {
+//        FileManager fileManager = new FileManager();
+//        fileManager.setFileName(".\\src\\secondlab\\behavior\\saves\\logs.txt");
+//
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileManager.getFileName()))) {
+//        } catch (IOException e) {
+//            System.out.println("Error while clearing logs.\n");
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public static void log (String logMessage) {
         FileManager fileManager = new FileManager();
