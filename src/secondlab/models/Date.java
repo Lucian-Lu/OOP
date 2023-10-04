@@ -1,4 +1,4 @@
-package secondlab;
+package secondlab.models;
 
 
 public class Date {
