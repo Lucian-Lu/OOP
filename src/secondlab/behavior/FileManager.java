@@ -1,11 +1,10 @@
 package secondlab.behavior;
 
-import secondlab.models.Faculty;
-import secondlab.models.StudyField;
-import secondlab.models.University;
-import secondlab.models.Date;
+import org.w3c.dom.ls.LSOutput;
+import secondlab.models.*;
 
 import java.io.*;
+import java.time.LocalDate;
 
 public class FileManager {
 
@@ -32,6 +31,7 @@ public class FileManager {
             LogManager.log("INFO: Saved data to " + fileManager.getFileName());
             System.out.println("Faculties added to database successfully.\n");
         } catch (IOException e) {
+            LogManager.log("FATAL: Error saving data to " + fileManager.getFileName());
             System.out.println("Error while creating file.\n");
             throw new RuntimeException(e);
         }
@@ -86,10 +86,69 @@ public class FileManager {
             }
             LogManager.log("INFO: Loaded data from " + fileManager.getFileName());
         } catch (IOException e) {
+            LogManager.log("FATAL: Error loading data from " + fileManager.getFileName());
             System.out.println("Error while loading file.\n");
             throw new RuntimeException(e);
         }
         System.out.println("Successfully loaded previous data.");
+    }
+
+    public static void graduateBatch() {
+        FileManager fileManager = new FileManager();
+        fileManager.setFileName(".\\src\\secondlab\\behavior\\saves\\batch\\graduates.txt");
+        LogManager.log("INFO: Loading data from " + fileManager.getFileName());
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileManager.getFileName()))) {
+            if (!reader.ready()) {
+                LogManager.log("WARN: Graduated student batch file is empty");
+                return;
+            }
+            while (reader.ready()) {
+                String email = reader.readLine();
+                Faculty.graduateStudent(email);
+                LogManager.log("AUDIT: Graduated student from batch file");
+            }
+        } catch (IOException e) {
+            LogManager.log("FATAL: Error loading data from " + fileManager.getFileName());
+            System.out.println("Error while loading batch graduation file.\n");
+            throw new RuntimeException(e);
+        }
+        LogManager.log("AUDIT: Successfully graduated students from batch file");
+    }
+
+    public static void enrollBatch(String abbreviation) {
+        FileManager fileManager = new FileManager();
+        fileManager.setFileName(".\\src\\secondlab\\behavior\\saves\\batch\\students.txt");
+        LogManager.log("INFO: Loading data from " + fileManager.getFileName());
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileManager.getFileName()))) {
+            if (!reader.ready()) {
+                LogManager.log("WARN: Students enroll batch file is empty");
+                return;
+            }
+            while (reader.ready()) {
+                String firstName = reader.readLine();
+                String lastName = reader.readLine();
+                String email = reader.readLine();
+                String[] enrollmentDate = LocalDate.now().toString().split("-");
+                Date formatEnrollmentDate = new Date(
+                        (byte) Integer.parseInt(enrollmentDate[2]),
+                        (byte) Integer.parseInt(enrollmentDate[1]),
+                        (short) Integer.parseInt(enrollmentDate[0]));
+                String[] dateOfBirth = reader.readLine().split("-");
+                Date formatDateOfBirth = new Date(
+                        (byte) Integer.parseInt(dateOfBirth[0]),
+                        (byte) Integer.parseInt(dateOfBirth[1]),
+                        (short) Integer.parseInt(dateOfBirth[2]));
+                Faculty.createAndAddStudentToFaculty(abbreviation, firstName, lastName, email,
+                        formatEnrollmentDate, formatDateOfBirth);
+                reader.readLine();
+                LogManager.log("AUDIT: Student enrolled from batch file");
+            }
+        } catch (IOException e) {
+            LogManager.log("FATAL: Error loading data from " + fileManager.getFileName());
+            System.out.println("Error while loading batch students enroll file.\n");
+            throw new RuntimeException(e);
+        }
+        LogManager.log("AUDIT: Successfully enrolled students from batch file");
     }
 
 }
