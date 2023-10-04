@@ -1,6 +1,7 @@
 package secondlab.behavior;
 
 import secondlab.models.*;
+import secondlab.behavior.FileManager;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -27,7 +28,8 @@ public class ApplicationLoop {
                     "What do you want to do?\n" +
                     "g - General operations\n" +
                     "f - Faculty operations\n" +
-                    "s - Student operations\n\n" +
+                    "s - Student operations\n" +
+                    "o - batch operations\n\n" +
                     "q - Quit Program\n" +
                     "> ");
 
@@ -43,6 +45,9 @@ public class ApplicationLoop {
                     break;
                 case "s":
                     keepLooping = studentOperations();
+                    break;
+                case "o":
+                    keepLooping = batchOperations();
                     break;
                 case "q":
                     LogManager.log("INFO: Exiting program - main menu");
@@ -196,6 +201,43 @@ public class ApplicationLoop {
                     return false;
                 default:
                     LogManager.log("WARN: Wrong option - student operations");
+                    System.out.println("Invalid option. Try again.\n");
+            }
+        }
+        return true;
+    }
+
+    public boolean batchOperations() {
+        LogManager.log("AUDIT: Using batch operations");
+        boolean keepLooping = true;
+        while (keepLooping) {
+            System.out.print("Batch operations\n" +
+                    "What do you want to do?\n" +
+                    "be/<faculty abbreviation> (b)atch (e)nrollment\n" +
+                    "bg (b)atch (g)raduation\n\n" +
+                    "b - Back\n" +
+                    "q - Quit Program\n" +
+                    "> ");
+            String option = scanner.nextLine();
+            LogManager.log("AUDIT: Entered command - batch operations: " + option);
+            String[] optionCommands = option.split("/");
+            switch (optionCommands[0]) {
+                case "be":
+                    FileManager.enrollBatch(optionCommands[1]);
+                    break;
+                case "bg":
+                    FileManager.graduateBatch();
+                    break;
+                case "b":
+                    LogManager.log("AUDIT: Back from - batch operations");
+                    keepLooping = false;
+                    break;
+                case "q":
+                    LogManager.log("INFO: Exiting program - batch operations");
+                    System.out.println("Exiting program...");
+                    return false;
+                default:
+                    LogManager.log("WARN: Wrong option - batch operations");
                     System.out.println("Invalid option. Try again.\n");
             }
         }
