@@ -9,9 +9,10 @@ Operation types:
 * Saving data to files
 * Loading previous states from files
 * Logging
+* Batch enrollment operation for students via text file
+* Batch graduation operation for students via text file
 <br>
 
 Work in progress:
 * Error handlers
-* Batch enrollment operation for students via text file
-* Batch graduation operation for students via text file
+
