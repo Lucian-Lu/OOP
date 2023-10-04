@@ -17,6 +17,7 @@ Other features:
 <br>
 
 Work in progress:
+* If anything doesn't work on main branch, please check secondlab branch first
 * Sleep
 
 
