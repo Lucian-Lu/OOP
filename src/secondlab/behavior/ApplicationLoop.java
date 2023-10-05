@@ -1,7 +1,6 @@
 package secondlab.behavior;
 
 import secondlab.models.*;
-import secondlab.behavior.FileManager;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -108,7 +107,6 @@ public class ApplicationLoop {
                         keepLooping = false;
                         break;
                     case "q":
-                        FileManager.save();
                         LogManager.log("INFO: Exiting program - general operations");
                         System.out.println("Exiting program...");
                         return false;
@@ -191,7 +189,6 @@ public class ApplicationLoop {
                         keepLooping = false;
                         break;
                     case "q":
-                        FileManager.save();
                         LogManager.log("INFO: Exiting program - faculty operations");
                         System.out.println("Exiting program...");
                         return false;
@@ -241,7 +238,6 @@ public class ApplicationLoop {
                         keepLooping = false;
                         break;
                     case "q":
-                        FileManager.save();
                         LogManager.log("INFO: Exiting program - student operations");
                         System.out.println("Exiting program...");
                         return false;
@@ -288,7 +284,6 @@ public class ApplicationLoop {
                         keepLooping = false;
                         break;
                     case "q":
-                        FileManager.save();
                         LogManager.log("INFO: Exiting program - batch operations");
                         System.out.println("Exiting program...");
                         return false;
