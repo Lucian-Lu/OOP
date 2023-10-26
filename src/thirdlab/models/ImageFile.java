@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ImageFile {
+
     public void getImageSize(String imagePath) {
         try {
             File image = new File(imagePath);
