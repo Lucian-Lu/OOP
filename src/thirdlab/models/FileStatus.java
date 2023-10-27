@@ -1,7 +1,8 @@
 package thirdlab.models;
 
 public enum FileStatus {
-    enum fileStatus = {
-
-    }
+    NO_CHANGE,
+    CHANGED,
+    NEW_FILE,
+    DELETED
 }
