@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class TextFile {
+public class TextFile extends DefaultFile {
 
     public void getTextFileInfo(String filePath) {
         int lineCount = 0;
@@ -28,5 +28,14 @@ public class TextFile {
         System.out.println("Line count = " + lineCount);
         System.out.println("Word count = " + wordCount);
         System.out.println("Character count = " + charCount);
+    }
+
+    @Override
+    public void printFileInfo(String fileName) {
+        System.out.println("File name: " + fileName);
+        System.out.println("File extension: " + getExtensionFromFileName(fileName));
+        System.out.println("Created: " + DefaultFile.getCreationDate(fileName));
+        System.out.println("Updated: " + DefaultFile.getUpdatedDate(fileName));
+        getTextFileInfo(getFolderLocation() + "\\" + fileName);
     }
 }

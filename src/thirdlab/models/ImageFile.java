@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class ImageFile {
+public class ImageFile extends DefaultFile {
 
     public void getImageSize(String imagePath) {
         try {
@@ -23,5 +23,14 @@ public class ImageFile {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void printFileInfo(String fileName) {
+        System.out.println("File name: " + fileName);
+        System.out.println("File extension: " + getExtensionFromFileName(fileName));
+        System.out.println("Created: " + DefaultFile.getCreationDate(fileName));
+        System.out.println("Updated: " + DefaultFile.getUpdatedDate(fileName));
+        getImageSize(getFolderLocation() + "\\" + fileName);
     }
 }

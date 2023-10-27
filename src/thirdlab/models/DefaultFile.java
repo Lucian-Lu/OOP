@@ -9,9 +9,7 @@ import java.nio.file.attribute.FileTime;
 
 public class DefaultFile {
     private static final String folderLocation = "C:\\University Documents\\Lab\\OOP\\Test";
-    public final String fileTest = "C:\\University Documents\\Lab\\OOP\\Test\\hi.txt";
     private String fileName;
-    private String extension;
 
 
     public void setFileName(String fileName) {
@@ -20,10 +18,6 @@ public class DefaultFile {
 
     public String getFileName() {
         return fileName;
-    }
-
-    public String getExtension() {
-        return extension;
     }
 
     public static String getFolderLocation() {
@@ -42,9 +36,10 @@ public class DefaultFile {
         return fileName.substring(lastDotIndex + 1).toLowerCase();
     }
 
-    public FileTime getCreationDate() {
+    public static FileTime getCreationDate(String fileName) {
         try {
-            Path path = Paths.get(fileTest);
+            String filePath = getFolderLocation() + "\\" + fileName;
+            Path path = Paths.get(filePath);
             BasicFileAttributes attributes = Files.readAttributes(path, BasicFileAttributes.class);
             return attributes.creationTime();
         }
@@ -54,9 +49,10 @@ public class DefaultFile {
         return null;
     }
 
-    public FileTime getUpdatedDate() {
+    public static FileTime getUpdatedDate(String fileName) {
         try {
-            Path path = Paths.get(fileTest);
+            String filePath = getFolderLocation() + "\\" + fileName;
+            Path path = Paths.get(filePath);
             BasicFileAttributes attributes = Files.readAttributes(path, BasicFileAttributes.class);
             return attributes.lastModifiedTime();
         }
@@ -64,5 +60,12 @@ public class DefaultFile {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void printFileInfo(String fileName) {
+        System.out.println("File name: " + fileName);
+        System.out.println("File extension: " + getExtensionFromFileName(fileName));
+        System.out.println("Created: " + DefaultFile.getCreationDate(fileName));
+        System.out.println("Updated: " + DefaultFile.getUpdatedDate(fileName));
     }
 }
