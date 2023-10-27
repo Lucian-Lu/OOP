@@ -73,30 +73,23 @@ public class ApplicationLoop {
     public void info(String fileName) {
         DefaultFile file = new DefaultFile();
         String extension = file.getExtensionFromFileName(fileName);
-        String filePath = file.getFolderLocation() + "\\" + fileName;
-        System.out.println("File name: " + fileName);
-        System.out.println("File extension: " + extension);
-        System.out.println("Created: " + file.getCreationDate());
-        System.out.println("Updated: " + file.getUpdatedDate());
         switch (extension) {
             case "txt":
                 TextFile textFile = new TextFile();
-                textFile.getTextFileInfo(filePath);
+                textFile.printFileInfo(fileName);
                 break;
             case "png":
             case "jpg":
                 ImageFile imageFile = new ImageFile();
-                imageFile.getImageSize(filePath);
+                imageFile.printFileInfo(fileName);
                 break;
             case "py":
-                ProgramFile programFilePython = new ProgramFile();
-                programFilePython.analyzePythonFile(filePath);
-                break;
             case "java":
                 ProgramFile programFileJava = new ProgramFile();
-                programFileJava.analyzeJavaFile(filePath);
+                programFileJava.printFileInfo(fileName);
                 break;
             default:
+                file.printFileInfo(fileName);
                 break;
         }
     }
