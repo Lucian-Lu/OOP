@@ -49,10 +49,9 @@ public class ProgramFile {
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
                 lineCount++;
-
-                if (line.matches("\\s*class.*")) {
+                if (line.matches("class.*")) {
                     classCount++;
-                } else if (line.matches("\\s*def.*\\(.*\\):")) {
+                } else if (line.matches("def.*\\(.*\\):")) {
                     methodCount++;
                 }
             }
