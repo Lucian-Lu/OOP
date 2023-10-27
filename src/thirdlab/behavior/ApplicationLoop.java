@@ -55,7 +55,8 @@ public class ApplicationLoop {
                     System.out.println("\n");
                     break;
                 case "q":
-                    keepLooping = false;
+                    System.exit(0);
+//                    keepLooping = false;
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
