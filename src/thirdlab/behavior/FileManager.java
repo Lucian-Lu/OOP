@@ -27,7 +27,7 @@ public class FileManager {
 
     public static void saveSnapshot(SnapshotManager snapshotManager) {
         FileManager fileManager = new FileManager();
-        fileManager.setFileName(".\\src\\thirdlab\\behavior\\saves\\snapshots.txt");
+        fileManager.setFileName(".\\src\\thirdlab\\saves\\snapshots.txt");
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileManager.getFileName()));
             writer.write(snapshotManager.getSnapShot().toString());
@@ -41,7 +41,7 @@ public class FileManager {
 
     public static LocalDateTime loadSnapshot() {
         FileManager fileManager = new FileManager();
-        fileManager.setFileName(".\\src\\thirdlab\\behavior\\saves\\snapshots.txt");
+        fileManager.setFileName(".\\src\\thirdlab\\saves\\snapshots.txt");
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileManager.getFileName()));
             String snapshotString = reader.readLine();
@@ -58,7 +58,7 @@ public class FileManager {
 
     public static void saveFiles() {
         FileManager fileManager = new FileManager();
-        fileManager.setFileName(".\\src\\thirdlab\\behavior\\saves\\files.txt");
+        fileManager.setFileName(".\\src\\thirdlab\\saves\\files.txt");
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileManager.getFileName()));
             File directory = new File(DefaultFile.getFolderLocation());
@@ -80,7 +80,7 @@ public class FileManager {
 
     public static String[] loadFiles() {
         FileManager fileManager = new FileManager();
-        fileManager.setFileName(".\\src\\thirdlab\\behavior\\saves\\files.txt");
+        fileManager.setFileName(".\\src\\thirdlab\\saves\\files.txt");
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileManager.getFileName()));
             String file;
