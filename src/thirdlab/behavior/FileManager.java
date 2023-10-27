@@ -31,7 +31,7 @@ public class FileManager {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileManager.getFileName()));
             writer.write(snapshotManager.getSnapShot().toString());
-
+            FileManager.saveFiles();
             writer.close();
         }
         catch (IOException e) {
@@ -56,5 +56,44 @@ public class FileManager {
         return null;
     }
 
+    public static void saveFiles() {
+        FileManager fileManager = new FileManager();
+        fileManager.setFileName(".\\src\\thirdlab\\behavior\\saves\\files.txt");
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileManager.getFileName()));
+            File directory = new File(DefaultFile.getFolderLocation());
+            if (directory.exists() && directory.isDirectory()) {
+                File[] files = directory.listFiles();
+                if (files != null) {
+                    for (File file : files) {
+                        writer.write(file.getName());
+                        writer.newLine();
+                    }
+                }
+            }
+            writer.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public static String[] loadFiles() {
+        FileManager fileManager = new FileManager();
+        fileManager.setFileName(".\\src\\thirdlab\\behavior\\saves\\files.txt");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileManager.getFileName()));
+            String file;
+            List<String> files = new ArrayList<>();
+            while ((file = reader.readLine()) != null) {
+                files.add(file);
+            }
+            reader.close();
+            return files.toArray(new String[0]);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
