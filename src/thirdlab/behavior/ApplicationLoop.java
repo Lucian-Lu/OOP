@@ -100,24 +100,63 @@ public class ApplicationLoop {
 
         if (directory.exists() && directory.isDirectory()) {
             File[] files = directory.listFiles();
+            String[] savedFiles = FileManager.loadFiles();
             if (files != null) {
                 for (File file : files) {
+                    String fileName = file.getName();
+                    boolean isCreated = !containsFile(savedFiles, fileName);
+
                     try {
                         BasicFileAttributes attributes = Files.readAttributes(file.toPath(), BasicFileAttributes.class);
                         LocalDateTime updateTime = attributes.lastModifiedTime().toInstant().atZone(
                                 ZoneId.systemDefault()).toLocalDateTime();
-                        int comparisonResult = snapshot.compareTo(updateTime);
-                        if (comparisonResult <= 0) {
-                            System.out.println(file.getName() + " - Changed");
+
+                        if (isCreated) {
+                            System.out.println(fileName + " - Created");
+                        } else if (isUpdated(updateTime)) {
+                            System.out.println(fileName + " - Updated");
                         } else {
-                            System.out.println(file.getName() + " - No Change");
+                            System.out.println(fileName + " - No Change");
                         }
                     }
                     catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
+                checkForDeleted(savedFiles, files);
             }
         }
+    }
+
+    private boolean containsFile(String[] files, String fileName) {
+        for (String file : files) {
+            if (file.equals(fileName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void printDeleted(String fileName) {
+        System.out.println(fileName + " - Deleted");
+    }
+
+    private void checkForDeleted(String[] savedFiles, File[] files) {
+        for (String savedFile : savedFiles) {
+            boolean found = false;
+            for (File file : files) {
+                if (savedFile.equals(file.getName())) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                printDeleted(savedFile);
+            }
+        }
+    }
+
+    private boolean isUpdated(LocalDateTime updateTime) {
+        return (snapshot.compareTo(updateTime) <= 0);
     }
 }
