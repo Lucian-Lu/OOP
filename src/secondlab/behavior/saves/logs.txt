@@ -1,0 +1,201 @@
+41 02 21 04 10 2023 | AUDIT: Using general operations
+53 04 21 04 10 2023 | Audit: Created new faculty
+53 04 21 04 10 2023 | AUDIT: Student added to faculty
+53 04 21 04 10 2023 | AUDIT: Student (lucian.lupan@isa.utm.md) graduated
+53 04 21 04 10 2023 | AUDIT: Student added to faculty
+53 04 21 04 10 2023 | AUDIT: Student added to faculty
+53 04 21 04 10 2023 | Audit: Created new faculty
+53 04 21 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+56 04 21 04 10 2023 | AUDIT: Entered command - main menu: g
+56 04 21 04 10 2023 | AUDIT: Using general operations
+11 06 21 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+11 06 21 04 10 2023 | Audit: Created new faculty
+11 06 21 04 10 2023 | AUDIT: Student added to faculty
+11 06 21 04 10 2023 | AUDIT: Student (lucian.lupan@isa.utm.md) graduated
+11 06 21 04 10 2023 | AUDIT: Student added to faculty
+11 06 21 04 10 2023 | AUDIT: Student added to faculty
+11 06 21 04 10 2023 | Audit: Created new faculty
+11 06 21 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+44 14 21 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+44 14 21 04 10 2023 | AUDIT: Created new faculty
+44 14 21 04 10 2023 | AUDIT: Student added to faculty
+44 14 21 04 10 2023 | AUDIT: Student (lucian.lupan@isa.utm.md) graduated
+44 14 21 04 10 2023 | AUDIT: Student added to faculty
+44 14 21 04 10 2023 | AUDIT: Student added to faculty
+44 14 21 04 10 2023 | AUDIT: Created new faculty
+44 14 21 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+30 18 22 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+30 18 22 04 10 2023 | AUDIT: Created new faculty
+30 18 22 04 10 2023 | AUDIT: Student added to faculty
+30 18 22 04 10 2023 | AUDIT: Student added to faculty
+30 18 22 04 10 2023 | AUDIT: Student added to faculty
+30 18 22 04 10 2023 | AUDIT: Created new faculty
+30 18 22 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+33 18 22 04 10 2023 | AUDIT: Entered command - main menu: o
+33 18 22 04 10 2023 | AUDIT: Using batch operations
+03 19 22 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+03 19 22 04 10 2023 | AUDIT: Created new faculty
+03 19 22 04 10 2023 | AUDIT: Student added to faculty
+03 19 22 04 10 2023 | AUDIT: Student added to faculty
+03 19 22 04 10 2023 | AUDIT: Student added to faculty
+03 19 22 04 10 2023 | AUDIT: Created new faculty
+03 19 22 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+15 19 22 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+15 19 22 04 10 2023 | AUDIT: Created new faculty
+15 19 22 04 10 2023 | AUDIT: Student added to faculty
+15 19 22 04 10 2023 | AUDIT: Student added to faculty
+15 19 22 04 10 2023 | AUDIT: Student added to faculty
+15 19 22 04 10 2023 | AUDIT: Created new faculty
+15 19 22 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+17 19 22 04 10 2023 | AUDIT: Entered command - main menu: o
+17 19 22 04 10 2023 | AUDIT: Using batch operations
+20 19 22 04 10 2023 | AUDIT: Entered command - batch operations: be/isa
+20 19 22 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\batch\students.txt
+20 19 22 04 10 2023 | AUDIT: Student added to faculty
+20 19 22 04 10 2023 | AUDIT: Student enrolled from batch file
+20 19 22 04 10 2023 | AUDIT: Student added to faculty
+20 19 22 04 10 2023 | AUDIT: Student enrolled from batch file
+20 19 22 04 10 2023 | AUDIT: Student added to faculty
+20 19 22 04 10 2023 | AUDIT: Student enrolled from batch file
+20 19 22 04 10 2023 | AUDIT: Successfully enrolled students from batch file
+50 19 22 04 10 2023 | AUDIT: Entered command - batch operations: bg
+50 19 22 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\batch\graduates.txt
+50 19 22 04 10 2023 | AUDIT: Student (mike.somelastname@isa.utm.md) graduated
+50 19 22 04 10 2023 | AUDIT: Graduated student from batch file
+50 19 22 04 10 2023 | AUDIT: Student (michael.jordan@isa.utm.md) graduated
+50 19 22 04 10 2023 | AUDIT: Graduated student from batch file
+50 19 22 04 10 2023 | AUDIT: Successfully graduated students from batch file
+55 19 22 04 10 2023 | AUDIT: Entered command - batch operations: b
+55 19 22 04 10 2023 | AUDIT: Back from - batch operations
+56 19 22 04 10 2023 | AUDIT: Entered command - main menu: g
+56 19 22 04 10 2023 | AUDIT: Using general operations
+59 19 22 04 10 2023 | AUDIT: Entered command - general operations: df
+59 19 22 04 10 2023 | AUDIT: Displayed all faculties
+04 20 22 04 10 2023 | AUDIT: Entered command - general operations: df/isa
+04 20 22 04 10 2023 | AUDIT: Displayed faculties related to isa
+12 20 22 04 10 2023 | AUDIT: Entered command - general operations: b
+12 20 22 04 10 2023 | AUDIT: Back from - general operations
+13 20 22 04 10 2023 | AUDIT: Entered command - main menu: f
+13 20 22 04 10 2023 | AUDIT: Using faculty operations
+19 20 22 04 10 2023 | AUDIT: Entered command - faculty operations: ds/isa
+19 20 22 04 10 2023 | AUDIT: Displayed enrolled students for faculty - isa
+27 20 22 04 10 2023 | AUDIT: Entered command - faculty operations: dg/isa
+27 20 22 04 10 2023 | AUDIT: Displayed graduated students for faculty - isa
+42 20 22 04 10 2023 | AUDIT: Entered command - faculty operations: bf/isa/michael.jordan@isa.utm.md
+42 20 22 04 10 2023 | AUDIT: Found student (michael.jordan@isa.utm.md) enrolled in isa
+46 20 22 04 10 2023 | AUDIT: Entered command - faculty operations: q
+46 20 22 04 10 2023 | INFO: Exiting program - faculty operations
+46 20 22 04 10 2023 | INFO: Saving data to .\src\secondlab\behavior\saves\database.txt
+46 20 22 04 10 2023 | INFO: Saved data to .\src\secondlab\behavior\saves\database.txt
+05 38 22 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+05 38 22 04 10 2023 | AUDIT: Created new faculty
+05 38 22 04 10 2023 | AUDIT: Student added to faculty
+05 38 22 04 10 2023 | AUDIT: Student added to faculty
+05 38 22 04 10 2023 | AUDIT: Student added to faculty
+05 38 22 04 10 2023 | AUDIT: Created new faculty
+05 38 22 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+08 38 22 04 10 2023 | AUDIT: Entered command - main menu: g
+08 38 22 04 10 2023 | AUDIT: Using general operations
+15 38 22 04 10 2023 | AUDIT: Entered command - general operations: nf/fre/frefre/frefrefe/frefrefer/frefre
+15 38 22 04 10 2023 | ERROR: Illegal command in general operationsInvalid command parameters
+32 00 23 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+32 00 23 04 10 2023 | AUDIT: Created new faculty
+32 00 23 04 10 2023 | AUDIT: Created new date in construct
+32 00 23 04 10 2023 | AUDIT: Created new date in construct
+32 00 23 04 10 2023 | AUDIT: Student added to faculty
+32 00 23 04 10 2023 | AUDIT: Created new date in construct
+32 00 23 04 10 2023 | AUDIT: Created new date in construct
+32 00 23 04 10 2023 | AUDIT: Student added to faculty
+32 00 23 04 10 2023 | AUDIT: Created new date in construct
+32 00 23 04 10 2023 | AUDIT: Created new date in construct
+32 00 23 04 10 2023 | AUDIT: Student added to faculty
+32 00 23 04 10 2023 | AUDIT: Created new faculty
+32 00 23 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+08 02 23 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+08 02 23 04 10 2023 | AUDIT: Created new faculty
+08 02 23 04 10 2023 | AUDIT: Created new date in construct
+08 02 23 04 10 2023 | AUDIT: Created new date in construct
+08 02 23 04 10 2023 | AUDIT: Student added to faculty
+08 02 23 04 10 2023 | AUDIT: Created new date in construct
+08 02 23 04 10 2023 | AUDIT: Created new date in construct
+08 02 23 04 10 2023 | AUDIT: Student added to faculty
+08 02 23 04 10 2023 | AUDIT: Created new date in construct
+08 02 23 04 10 2023 | AUDIT: Created new date in construct
+08 02 23 04 10 2023 | AUDIT: Student added to faculty
+08 02 23 04 10 2023 | AUDIT: Created new faculty
+08 02 23 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+57 02 23 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\database.txt
+57 02 23 04 10 2023 | AUDIT: Created new faculty
+57 02 23 04 10 2023 | AUDIT: Created new date in construct
+57 02 23 04 10 2023 | AUDIT: Created new date in construct
+57 02 23 04 10 2023 | AUDIT: Student added to faculty
+57 02 23 04 10 2023 | AUDIT: Created new date in construct
+57 02 23 04 10 2023 | AUDIT: Created new date in construct
+57 02 23 04 10 2023 | AUDIT: Student added to faculty
+57 02 23 04 10 2023 | AUDIT: Created new date in construct
+57 02 23 04 10 2023 | AUDIT: Created new date in construct
+57 02 23 04 10 2023 | AUDIT: Student added to faculty
+57 02 23 04 10 2023 | AUDIT: Created new faculty
+57 02 23 04 10 2023 | INFO: Loaded data from .\src\secondlab\behavior\saves\database.txt
+58 02 23 04 10 2023 | AUDIT: Entered command - main menu: g
+58 02 23 04 10 2023 | AUDIT: Using general operations
+06 03 23 04 10 2023 | AUDIT: Entered command - general operations: nf/test/test/test
+06 03 23 04 10 2023 | ERROR: Illegal command in general operationsNo enum constant secondlab.models.StudyField.test
+18 05 23 04 10 2023 | AUDIT: Entered command - general operations: ss/test
+18 05 23 04 10 2023 | WARN: Student not found by this email - test
+32 05 23 04 10 2023 | AUDIT: Entered command - general operations: df
+32 05 23 04 10 2023 | AUDIT: Displayed all faculties
+43 05 23 04 10 2023 | AUDIT: Entered command - general operations: df/SOFTWARE_ENGINEERING
+43 05 23 04 10 2023 | AUDIT: Displayed faculties related to SOFTWARE_ENGINEERING
+52 05 23 04 10 2023 | AUDIT: Entered command - general operations: b
+52 05 23 04 10 2023 | AUDIT: Back from - general operations
+53 05 23 04 10 2023 | AUDIT: Entered command - main menu: f
+53 05 23 04 10 2023 | AUDIT: Using faculty operations
+59 05 23 04 10 2023 | AUDIT: Entered command - faculty operations: ns/test/test/test
+59 05 23 04 10 2023 | ERROR: Illegal command in faculty operationsInvalid command parameters
+04 09 23 04 10 2023 | AUDIT: Entered command - faculty operations: gs/test
+04 09 23 04 10 2023 | WARN: Student not found while graduating student
+13 09 23 04 10 2023 | AUDIT: Entered command - faculty operations: ds/isa
+13 09 23 04 10 2023 | AUDIT: Displayed enrolled students for faculty - isa
+23 09 23 04 10 2023 | AUDIT: Entered command - faculty operations: dg/isa
+23 09 23 04 10 2023 | WARN: Graduated students not found for faculty - isa
+31 15 23 04 10 2023 | AUDIT: Entered command - faculty operations: bf/isa/lucian.lupan@isa.utm.md
+31 15 23 04 10 2023 | AUDIT: Found student (lucian.lupan@isa.utm.md) enrolled in isa
+36 15 23 04 10 2023 | AUDIT: Entered command - faculty operations: b
+36 15 23 04 10 2023 | AUDIT: Back from - faculty operations
+39 15 23 04 10 2023 | AUDIT: Entered command - main menu: o
+39 15 23 04 10 2023 | AUDIT: Using batch operations
+45 15 23 04 10 2023 | AUDIT: Entered command - batch operations: be/fcim
+45 15 23 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\batch\students.txt
+45 15 23 04 10 2023 | AUDIT: Created new date in construct
+45 15 23 04 10 2023 | AUDIT: Created new date in construct
+45 15 23 04 10 2023 | WARN: Faculty not found while adding student
+45 15 23 04 10 2023 | AUDIT: Student enrolled from batch file
+45 15 23 04 10 2023 | AUDIT: Created new date in construct
+45 15 23 04 10 2023 | AUDIT: Created new date in construct
+45 15 23 04 10 2023 | WARN: Faculty not found while adding student
+45 15 23 04 10 2023 | AUDIT: Student enrolled from batch file
+45 15 23 04 10 2023 | AUDIT: Created new date in construct
+45 15 23 04 10 2023 | AUDIT: Created new date in construct
+45 15 23 04 10 2023 | WARN: Faculty not found while adding student
+45 15 23 04 10 2023 | AUDIT: Student enrolled from batch file
+45 15 23 04 10 2023 | AUDIT: Successfully enrolled students from batch file
+15 16 23 04 10 2023 | AUDIT: Entered command - batch operations: be/isa
+15 16 23 04 10 2023 | INFO: Loading data from .\src\secondlab\behavior\saves\batch\students.txt
+15 16 23 04 10 2023 | AUDIT: Created new date in construct
+15 16 23 04 10 2023 | AUDIT: Created new date in construct
+15 16 23 04 10 2023 | AUDIT: Student added to faculty
+15 16 23 04 10 2023 | AUDIT: Student enrolled from batch file
+15 16 23 04 10 2023 | AUDIT: Created new date in construct
+15 16 23 04 10 2023 | AUDIT: Created new date in construct
+15 16 23 04 10 2023 | AUDIT: Student added to faculty
+15 16 23 04 10 2023 | AUDIT: Student enrolled from batch file
+15 16 23 04 10 2023 | AUDIT: Created new date in construct
+15 16 23 04 10 2023 | AUDIT: Created new date in construct
+15 16 23 04 10 2023 | AUDIT: Student added to faculty
+15 16 23 04 10 2023 | AUDIT: Student enrolled from batch file
+15 16 23 04 10 2023 | AUDIT: Successfully enrolled students from batch file
+29 16 23 04 10 2023 | AUDIT: Entered command - batch operations: q
+29 16 23 04 10 2023 | INFO: Exiting program - batch operations
+29 16 23 04 10 2023 | INFO: Saving data to .\src\secondlab\behavior\saves\database.txt
+29 16 23 04 10 2023 | INFO: Saved data to .\src\secondlab\behavior\saves\database.txt

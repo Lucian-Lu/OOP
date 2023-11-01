@@ -1,0 +1,14 @@
+Mike
+Somelastname
+mike.somelastname@isa.utm.md
+1-1-2000
+
+John
+Smith
+john.smith@isa.utm.md
+2-3-2001
+
+Michael
+Jordan
+michael.jordan@isa.utm.md
+1-1-1970
