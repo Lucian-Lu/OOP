@@ -52,7 +52,7 @@ public class CircularQueue<T> implements QueueInterface<T> {
     @Override
     public void peek() {
         if (!isEmpty()) {
-            System.out.println(items[front]);
+            System.out.println("Last added item = " + items[front]);
         } else {
             System.out.println("Stack is empty");
         }

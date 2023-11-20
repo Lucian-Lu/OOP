@@ -59,7 +59,7 @@ public class PriorityQueue<T> implements QueueInterface<T> {
     @Override
     public void peek() {
         if (!isEmpty()) {
-            System.out.println(front.item);
+            System.out.println("Last added item = " + front.item);
         } else {
             System.out.println("Stack is empty");
         }

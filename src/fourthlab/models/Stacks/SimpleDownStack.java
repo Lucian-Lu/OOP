@@ -4,21 +4,22 @@ public class SimpleDownStack<T> implements StackInterface<T> {
 
     private int maxStack;
     private int emptyStack;
-    private int top;
+    public int top;
     private T[] items;
 
     public SimpleDownStack(int size) {
         this.maxStack = size;
         this.emptyStack = 0;
-        this.top = maxStack;
+        this.top = emptyStack;
         this.items = (T[]) new Object[size];
     }
 
     @Override
     public void push(T item) {
         if (!isFull()) {
-            items[--top] = item;
+            items[top] = item;
             System.out.println("Pushed stack: " + item);
+            top++;
         } else {
             System.out.println("Stack is full. Cannot push item " + item);
         }
@@ -27,7 +28,7 @@ public class SimpleDownStack<T> implements StackInterface<T> {
     @Override
     public T pop() {
         if (!isEmpty()) {
-            T item = items[top++];
+            T item = items[--top];
             System.out.println("Popped stack: " + item);
             return item;
         } else {
@@ -39,7 +40,7 @@ public class SimpleDownStack<T> implements StackInterface<T> {
     @Override
     public void peek() {
         if (!isEmpty()) {
-            System.out.println(items[top]);
+            System.out.println("Last added item = " + items[top - 1]);
         } else {
             System.out.println("Stack is empty");
         }
@@ -47,12 +48,12 @@ public class SimpleDownStack<T> implements StackInterface<T> {
 
     @Override
     public boolean isFull() {
-        return (top == emptyStack);
+        return (top == maxStack);
     }
 
     @Override
     public boolean isEmpty() {
-        return (top == maxStack);
+        return (top == emptyStack);
     }
 
     @Override
@@ -60,8 +61,8 @@ public class SimpleDownStack<T> implements StackInterface<T> {
         if (isEmpty()) {
             System.out.println("Stack is empty");
         } else {
-            System.out.println("Simple down stack elements:");
-            for (int i = top; i < maxStack; i++) {
+            System.out.println("Simple up stack elements:");
+            for (int i = top - 1; i >= 0; i--) {
                 System.out.println("Item nr " + (i + 1) + ": " + items[i]);
             }
             System.out.println();

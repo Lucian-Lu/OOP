@@ -1,5 +1,6 @@
 package fourthlab;
 
+import fourthlab.behavior.ApplicationLoop;
 import fourthlab.models.Queues.*;
 import fourthlab.models.Stacks.*;
 
@@ -72,5 +73,7 @@ public class Main {
 //        queue3.printQueue();
 //        queue3.dequeue();
 //        queue3.printQueue();
+        ApplicationLoop app = new ApplicationLoop();
+        app.run();
     }
 }

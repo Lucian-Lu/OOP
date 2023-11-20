@@ -42,7 +42,7 @@ public class LinkedStack<T> implements StackInterface<T> {
     @Override
     public void peek() {
         if (!isEmpty()) {
-            System.out.println(top.item);
+            System.out.println("Last added item = " + top.item);
         } else {
             System.out.println("Stack is empty");
         }
